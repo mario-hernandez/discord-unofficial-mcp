@@ -1,5 +1,9 @@
 # discord-unofficial-mcp
 
+<p align="center">
+  <img src="docs/hero.png" alt="discord-unofficial-mcp — read your own DMs · no token · no API · read-only" width="100%">
+</p>
+
 **"Look at my Discord messages"** — for any MCP-capable agent (Claude Code, Claude Desktop,
 Codex, Cursor…). Reads **your own** Discord direct messages (DMs and group DMs) through the
 **official Discord web client** running in a dedicated Chrome where you signed in once, by hand.
