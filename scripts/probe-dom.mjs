@@ -8,7 +8,7 @@ try {
   const def = browser.defaultBrowserContext();
   const page = (await browser.pages()).find((p) => p.browserContext() === def && new URL(p.url()).origin === "https://discord.com");
   if (!page) throw new Error("No Discord tab open in the default context (run `status` first).");
-  console.log("url:", page.url());
+  console.log("url:", page.url().replace(/\d{10,}/g, "N"));
   const info = await page.evaluate(() => {
     const short = (s) => (s || "").replace(/\s+/g, " ").trim().slice(0, 60);
     const cls = (el) => (el?.className && typeof el.className === "string" ? el.className.split(" ").slice(0, 3).join(" ") : "");

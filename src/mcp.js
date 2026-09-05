@@ -13,7 +13,7 @@ import * as core from "./core.js";
 const SNOWFLAKE = /^\d{15,22}$/;
 
 const server = new McpServer(
-  { name: "discord-unofficial-mcp", version: "0.3.0" },
+  { name: "discord-unofficial-mcp", version: "0.4.0" },
   {
     instructions: [
       "discord-unofficial-mcp reads the account owner's Discord direct messages (DMs) through the official web client running in their dedicated Chrome. It is READ-ONLY: it cannot send, react or type anything.",
@@ -96,7 +96,8 @@ server.registerTool(
     try {
       if (!!channel_id === !!name) throw new Error("Pass exactly one of channel_id or name.");
       const r = await core.readDm({ channelId: channel_id, name, limit, before });
-      return ok(format === "json" ? asJson(r) : core.renderThread(r));
+      // Both formats are trimmed to the same budget with count/hasMore/nextBefore kept consistent.
+      return ok(format === "json" ? core.threadJson(r) : core.renderThread(r));
     } catch (e) {
       return fail(e);
     }
@@ -117,7 +118,7 @@ server.registerTool(
   async ({ max_channels, per_channel, format }) => {
     try {
       const c = await core.catchUp({ maxChannels: max_channels, perChannel: per_channel });
-      return ok(format === "json" ? asJson(c) : core.renderCatchUp(c));
+      return ok(format === "json" ? core.catchUpJson(c) : core.renderCatchUp(c));
     } catch (e) {
       return fail(e);
     }

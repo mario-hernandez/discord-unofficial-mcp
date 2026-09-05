@@ -1,13 +1,13 @@
 {
   "name": "discord-unofficial-mcp",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Unofficial MCP server + CLI that reads your own Discord DMs through the official web client. Read-only, no token, no API.",
-  "main": "index.js",
   "scripts": {
     "test": "node scripts/smoke.mjs",
     "start": "node src/mcp.js",
     "mcp": "node src/mcp.js",
-    "chrome": "bash scripts/chrome.sh"
+    "chrome": "bash scripts/chrome.sh",
+    "test:mcp": "node scripts/smoke-mcp.mjs"
   },
   "keywords": [
     "discord",
@@ -39,6 +39,6 @@
     "url": "https://github.com/mario-hernandez/discord-unofficial-mcp/issues"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12.0"
   }
 }
