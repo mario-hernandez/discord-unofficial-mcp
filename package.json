@@ -1,0 +1,44 @@
+{
+  "name": "discord-unofficial-mcp",
+  "version": "0.3.0",
+  "description": "Unofficial MCP server + CLI that reads your own Discord DMs through the official web client. Read-only, no token, no API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node scripts/smoke.mjs",
+    "start": "node src/mcp.js",
+    "mcp": "node src/mcp.js",
+    "chrome": "bash scripts/chrome.sh"
+  },
+  "keywords": [
+    "discord",
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "direct-messages",
+    "read-only"
+  ],
+  "author": "Mario Hernández <developer@supera.dev>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "proper-lockfile": "^4.1.2",
+    "puppeteer-core": "^25.10.0",
+    "zod": "^4.5.4"
+  },
+  "bin": {
+    "discord-unofficial-mcp": "src/cli.js"
+  },
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mario-hernandez/discord-unofficial-mcp.git"
+  },
+  "homepage": "https://github.com/mario-hernandez/discord-unofficial-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/mario-hernandez/discord-unofficial-mcp/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
